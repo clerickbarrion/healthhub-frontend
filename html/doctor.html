@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Doctor</title>
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/doctor.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="../imgs/notes-medical-solid.svg">
+  <!-- copy from here -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- to here -->
+
+
+
+
+</head>
+
+<body>
+  <header>
+
+  <nav>
+    <div class="nav-wrapper blue darken-4" >
+      <a href="../index.html" class="brand-logo">HealthHub+</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="../html/symptoms.html">Symptom Checker</a></li>
+        <li><a href="../html/remedies.html">Remedies</a></li>
+        <li><a href="../html/mentalHealth.html">Mental Health</a></li>
+        <li><a href="../html/doctor.html">Find a Doctor</a></li>
+        <li><a href="../html/logIn.html"  class="waves-effect waves-light btn">Log In</a></li>
+      </ul>
+      <img id="chat-icon" class="right" src="../imgs/chaticon.png">
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="../html/symptoms.html">Symptom Checker</a></li>
+    <li><a href="../html/remedies.html">Remedies</a></li>
+    <li><a href="../html/mentalHealth.html">Mental Health</a></li>
+    <li><a href="../html/doctor.html">Find a Doctor</a></li>
+    <li><a href="../html/logIn.html" class="waves-effect waves-light btn">Log In</a></li>
+  </ul>
+
+  </header>
+  <main>
+
+    <h3 class="center-align">Find a doctor near you</h3>
+
+    <iframe
+      src="https://storage.googleapis.com/maps-solutions-yqyn9lufwl/neighborhood-discovery/l4vz/neighborhood-discovery.html"
+      width="100%" height="85%" style="border:0;" loading="lazy">
+    </iframe>
+  </main>
+
+  <footer class="page-footer card-panel blue darken-4">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Contact</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Info@HealthHub.org</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Charlotte, NC</a></li>
+            <h5 class="white-text">Disclaimer</h5>
+            <p class="grey-text text-lighten-4">The information provided is intended for general informational purposes
+              only and should not be considered professional medical advice, diagnosis, or treatment.
+              HealthHub+ is not a licensed medical professional. Please consult a qualified healthcare professional for
+              advice regarding your specific health condition.
+              In case of a medical emergency, please call 911 or your local emergency services immediately.</p>
+
+        </div>
+        <div class="col l4 offset-l2 s12">
+
+          <div class="info_form ">
+            <h5>
+              Newsletter
+            </h5>
+            <form action="#">
+              <input type="email" placeholder="Enter your email">
+              <button class="waves-effect waves-light btn">
+                Subscribe
+              </button>
+            </form>
+          </div>
+          <h5 class="white-text">Resources</h5>
+          <li><a class="grey-text text-lighten-3" href="https://www.mayoclinic.org/">Mayo Clinic</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.cdc.gov/index.htm">CDC Official Website</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://988lifeline.org/">Suicide Prevention Hotline</a></li>
+
+          </ul>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container center-align">
+        © 2024 HealthHub Copyright
+
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript" src="../js/doctor.js"></script>
+  <!-- copy from here -->
+  <div id="chat-box"></div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="../js/client-chat.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script type="text" src="../css/materialize-css/dist/js/materialize.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- to here -->
+</body>
+
+</html>

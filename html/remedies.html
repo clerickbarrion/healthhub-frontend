@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthHub</title>
+  <link href="../css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/remedies.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="icon" type="image/x-icon" href="../imgs/notes-medical-solid.svg">
+</head>
+
+<body>
+
+
+    <nav>
+        <div class="nav-wrapper blue darken-4" >
+          <a href="../index.html" class="brand-logo">HealthHub+</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="symptoms.html">Symptom Checker</a></li>
+            <li><a href="remedies.html">Remedies</a></li>
+            <li><a href="mentalHealth.html">Mental Health</a></li>
+            <li><a href="doctor.html">Find a Doctor</a></li>
+            <li><a href="logIn.html"  class="waves-effect waves-light btn">Log In</a></li>
+          </ul>
+          <img id="chat-icon" class="right" src="../imgs/chaticon.png">
+        </div>
+    </nav>
+    
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="symptoms.html">Symptom Checker</a></li>
+        <li><a href="remedies.html">Remedies</a></li>
+        <li><a href="mentalHealth.html">Mental Health</a></li>
+        <li><a href="doctor.html">Find a Doctor</a></li>
+        <li><a href="logIn.html" class="waves-effect waves-light btn">Log In</a></li>
+    </ul>
+
+<main>
+
+      <div id='form'id="remedies" class="center-align">
+        <div class="row">
+          <div class="col s25 m6  center-align">
+            <div class="card center-align">
+              <div class="card-content white-text center-align">
+  
+      <div id="diagnosis-input-container">
+        <label for="diagnosis" id="label">
+          <span class="card-title"> <h3 class="center-align black-text">Remedy Finder</h3></span>
+        </label>
+        <small class="center-align">Find the best cure for you</small>
+        <div id="diagnosis-input-buttons" class="center-align">
+          <input  class="blue darken-4 white-text center-align" id="diagnosis" list="diagnosisList" placeholder="Enter diagnosis">
+          <datalist id="diagnosisList"></datalist>
+          
+        </div>
+      </div>
+
+                
+        
+               
+      </div>
+      <div class="card-action"> 
+        <button class="center-align waves-light btn modal-trigger blue darken-4" id="submit-diagnosis" >Find Remedies</button>
+ </div>
+      </div>
+        <section id="popup" class="card">
+          <div class="card-image">
+            <img src="../imgs/medicine.png">
+          </div>
+          <div class="card-tabs">
+            <ul class="tabs">
+              <li class="tab"><a class="active white-text blue darken-4" href="#description">Description</a></li>
+              <li class="tab"><a class="white-text blue darken-4" href="#recommended">Remedies</a></li>
+              <li class="tab"><a class="white-text blue darken-4" href="#alternative">Alternative Treatment</a></li>
+            </ul>
+          </div>
+          <div class="card-content white">
+            <p id="description" class="white"></p>
+            <p id="recommended" class="white"></p>
+            <div id="alternative" class="white">
+              <p id="alternative-text"></p>
+              <a href="#">Learn More</a>
+            </div>
+            
+          </div>
+          <!-- <div id="desc-wrap" class="card blue darken-4">
+            <h4 class="white-text">Description</h4>
+             
+            <p id="description" class="card-content white"></p>
+          </div>
+  
+          <div id="rec-wrap" class="card blue darken-4">
+            <h4 class="white-text">Remedies</h4>
+            
+            <p id="recommended" class="card-content white"></p>
+          </div>
+  
+          <div id="alt-wrap" class="card blue darken-4">
+            <h4 class="white-text">Alternative Treatment</h4>
+             
+            <p id="alternative" class="card-content white"></p>
+           
+          </div> -->
+        </section>
+
+
+     
+
+    
+
+   
+    <section id="tips">
+        <h2 id="best-health">HealthHub+ Tips</h2>
+    
+    <div class="carousel">
+        <a class="carousel-item" href="#item1" id="carousel1">
+            <img src="../carousel-images/best1.png">
+        </a>
+    
+        <a class="carousel-item" href="#item2">
+            <img src="../carousel-images/best2.png" id=carousel2>
+        </a>
+    
+        <a class="carousel-item" href="#item3">
+            <img src="../carousel-images/best3.png" id="carousel3">
+        </a>
+    </div>
+    </section>
+    
+
+</main>
+
+
+  <footer class="page-footer card-panel blue darken-4">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Contact</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Info@HealthHub.org</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Charlotte, NC</a></li>
+            <h5 class="white-text">Disclaimer</h5>
+            <p class="grey-text text-lighten-4">The information provided is intended for general informational purposes
+              only and should not be considered professional medical advice, diagnosis, or treatment.
+              HealthHub+ is not a licensed medical professional. Please consult a qualified healthcare professional for
+              advice regarding your specific health condition.
+              In case of a medical emergency, please call 911 or your local emergency services immediately.</p>
+
+        </div>
+        <div class="col l4 offset-l2 s12">
+
+          <div class="info_form ">
+            <h5>
+              Newsletter
+            </h5>
+            <form action="#">
+              <input type="email" placeholder="Enter your email">
+              <button class="waves-effect waves-light btn">
+                Subscribe
+              </button>
+            </form>
+          </div>
+          <h5 class="white-text">Resources</h5>
+          <li><a class="grey-text text-lighten-3" href="https://www.mayoclinic.org/">Mayo Clinic</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.cdc.gov/index.htm">CDC Official Website</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://988lifeline.org/">Suicide Prevention Hotline</a></li>
+
+          </ul>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container center-align">
+        © 2024 HealthHub Copyright
+
+      </div>
+    </div>
+  </footer>
+  <div id="chat-box"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script type="text" src="../css/materialize-css/dist/js/materialize.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="../js/remedies.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="../js/client-chat.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptoms</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/symptoms.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="icon" type="image/x-icon" href="../imgs/notes-medical-solid.svg">
+
+</head>
+
+<body>
+    <header>
+
+        <nav>
+            <div class="nav-wrapper blue darken-4">
+                <a href="../index.html" class="brand-logo">HealthHub+</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="symptoms.html">Symptom Checker</a></li>
+                    <li><a href="remedies.html">Remedies</a></li>
+                    <li><a href="mentalHealth.html">Mental Health</a></li>
+                    <li><a href="doctor.html">Find a Doctor</a></li>
+                    <li><a href="logIn.html" class="waves-effect waves-light btn">Log In</a></li>
+                </ul>
+                <img id="chat-icon" class="right" src="../imgs/chaticon.png">
+            </div>
+        </nav>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="symptoms.html">Symptom Checker</a></li>
+            <li><a href="remedies.html">Remedies</a></li>
+            <li><a href="mentalHealth.html">Mental Health</a></li>
+            <li><a href="doctor.html">Find a Doctor</a></li>
+            <li><a href="logIn.html" class="waves-effect waves-light btn">Log In</a></li>
+        </ul>
+
+    </header>
+    <main>
+        <div id="backgroundContainer">
+            <form id="symptomForm">
+                <h1>Symptom Checker</h1>
+                <label for="selectedSymptom">Choose symptoms you are experiencing:</label>
+                <br>
+                <input type="text" list="symptoms" id="selectedSymptom">
+                <datalist id="symptoms">
+                </datalist>
+                <br>
+                <button type="button" class="waves-effect waves-light btn blue darken-4" onclick="addSymptom()">Add
+                    Symptoms</button>
+                <ul id="selectedSymptoms"></ul>
+                <br>
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <br>
+                <label for="birthYear">Birth Year:</label>
+                <input type="number" id="birthYear" name="birthYear" min="1900" max="2100" step="1"
+                    placeholder="Enter 4-digit year">
+                <br>
+                <button type="button" class="waves-effect waves-light btn blue darken-4" onclick="getDiagnoses()">Get
+                    Diagnoses</button>
+                <ul id="Diagnoses"></ul>
+            </form>
+
+            <div class="row">
+                <div class="col s4">
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="cardPic" src="../symptoms-images/vaccination.png">
+                            <span class="card-title">Vaccinations</span>
+                            <a class="btn-floating halfway-fab waves-effect waves-light blue darken-4" link
+                                href="https://www.vaccines.gov/"><i class="material-icons">local_hospital</i></a>
+                        </div>
+                        <div class="card-content">
+                            <p>Use Vaccines.gov to find a location near you, then call or visit their website to make an
+                                appointment.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s4">
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="cardPic" src="../symptoms-images/std-testing.png">
+                            <span class="card-title">STD Testing</span>
+                            <a class="btn-floating halfway-fab waves-effect waves-light blue darken-4" link
+                                href="https://www.questhealth.com/lp-sexual-health.html?utm_campaign=unbr-std&utm_source=google&utm_medium=cpc&utm_clickid=Cj0KCQiAy9msBhD0ARIsANbk0A9X_Rp_Pcp2NpzLeOkMImPJdzNqu3uReAKe-i37DnF8KoflNgPY75gaAsAmEALw_wcB&utm_device=c&utm_keyword=std%20testing&utm_content=648130800442&utm_adgroup=general-std&gad_source=1&gclid=Cj0KCQiAy9msBhD0ARIsANbk0A9X_Rp_Pcp2NpzLeOkMImPJdzNqu3uReAKe-i37DnF8KoflNgPY75gaAsAmEALw_wcB"><i
+                                    class="material-icons">local_pharmacy</i></a>
+                        </div>
+                        <div class="card-content">
+                            <p>Testing is the only way to know for sure whether you have a sexually transmitted disease.
+                                Schedule an appointment at one of Quest
+                                Diagnostics locations nationwide.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s4">
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="cardPic" src="../symptoms-images/dental.png">
+                            <span class="card-title">Dental Care</span>
+                            <a class="btn-floating halfway-fab waves-effect waves-light blue darken-4" link
+                                href="https://charlottecommunityhealth.org/en/what-we-do/dentistry/"><i
+                                    class="material-icons">healing</i></a>
+                        </div>
+                        <div class="card-content">
+                            <p>Charlotte Community Health Clinic offers high-quality medical, dental, and behavioral
+                                health services for kids and adults.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer card-panel blue darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Contact</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Info@HealthHub.org</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Charlotte, NC</a></li>
+                        <h5 class="white-text">Disclaimer</h5>
+                        <p class="grey-text text-lighten-4">The information provided is intended for general
+                            informational purposes only and should not be considered professional medical advice,
+                            diagnosis, or treatment.
+                            HealthHub+ is not a licensed medical professional. Please consult a qualified healthcare
+                            professional for advice regarding your specific health condition.
+                            In case of a medical emergency, please call 911 or your local emergency services
+                            immediately.</p>
+
+                </div>
+                <div class="col l4 offset-l2 s12">
+
+                    <div class="info_form ">
+                        <h5>
+                            Newsletter
+                        </h5>
+                        <form action="#">
+                            <input type="email" placeholder="Enter your email">
+                            <button class="waves-effect waves-light btn">
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                    <h5 class="white-text">Resources</h5>
+                    <li><a class="grey-text text-lighten-3" href="https://www.mayoclinic.org/">Mayo Clinic</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://www.cdc.gov/index.htm">CDC Official
+                            Website</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://988lifeline.org/">Suicide Prevention
+                            Hotline</a></li>
+
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container center-align">
+                © 2024 HealthHub Copyright
+
+            </div>
+        </div>
+    </footer>
+    <div id="chat-box"></div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../js/client-chat.js"></script>
+    <script src="../js/symptoms.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text" src="../css/materialize-css/dist/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,89 @@
+body, html {
+  background: url("https://businessnc.com/wp-content/uploads/2019/11/best-dr._gettyimages-1023224308-696x316.jpg") center no-repeat;
+  background-size: 100% 100%;
+}
+
+main {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  background-color: white;
+  box-shadow: rgb(51, 51, 51) 5px 0px 15px, rgb(51, 51, 51) -5px 0px 15px;
+  padding: 2rem;
+}
+
+h2 {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 2;
+}
+
+article {
+  height: 60vh;
+  overflow: scroll;
+}
+article #description-switch {
+  background-color: navy;
+  color: white;
+  cursor: pointer;
+}
+article #remedy-switch {
+  background-color: white;
+  color: navy;
+  cursor: pointer;
+}
+article #remove {
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
+
+ol {
+  text-align: left;
+  color: navy;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+ol li {
+  cursor: pointer;
+}
+ol li div {
+  display: flex;
+  gap: 1rem;
+}
+ol li div button {
+  height: -moz-fit-content;
+  height: fit-content;
+  align-self: center;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
+
+.collapsible-body {
+  max-width: 50vw;
+  max-height: 50vh;
+}
+.collapsible-body #remedy {
+  display: none;
+}
+
+#remedy, #description {
+  max-height: 50vh;
+  overflow: scroll;
+}
+
+@media (max-width: 833px) {
+  .collapsible-body {
+    max-width: none;
+  }
+}
+@media (max-width: 823px) {
+  article {
+    flex-direction: column;
+  }
+  article section {
+    margin: auto;
+  }
+}/*# sourceMappingURL=account.css.map */

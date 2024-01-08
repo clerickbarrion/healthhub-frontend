@@ -1,0 +1,205 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #fafafa, #bbdefb, #fafafa);
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#typewriter {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 0.15em solid rgb(0, 123, 255);
+  white-space: nowrap;
+  font-size: 4em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  min-height: 100px;
+ 
+}
+
+#section1 {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.text-content {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+#sick-person {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#welcome {
+  padding: 20px;
+  width: 100%;
+  color: white;
+  font-size: large;
+  margin-top: 100px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto','Oxygen-Sans','Ubuntu','Cantarell',"Helvetica Neue",sans-serif;
+
+}
+.card-content{
+  padding-top:3px !important;
+}
+div.card .card-action{
+  padding: 0;
+}
+
+#section2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#home-nav {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.card.blue.darken-4 {
+  height: 100px;
+  width: 400px;
+}
+
+.card.blue.darken-4 .card-content.white-text,
+.card.blue.darken-4 .card-action a {
+  color: white !important;
+}
+
+.card-content.white-text {
+  padding-bottom: 30px;
+}
+
+.card.blue.darken-4 {
+  margin-bottom: 50px;
+}
+
+.card.blue.darken-4 .card-action {
+  padding-top: 10px;
+}
+
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.col {
+  flex: 0 0 auto;
+  margin: 0 8px;
+  margin-bottom: 16px;
+}
+
+.card-custom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#explore {
+  color: black;
+}
+
+#section3 {
+  margin-top: 50px;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+#carousel1,
+#carousel2,
+#carousel3 {
+  width: 600px;
+  height: auto;
+}
+
+#testimonials {
+  text-align: center;
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  #section1 {
+    flex-direction: column;
+  }
+
+  .text-content {
+    width: 100%;
+    padding: 20px;
+  }
+
+  #sick-person {
+    display: block;
+    margin-top: 20px;
+  }
+
+  #typewriter {
+    font-size: 4em;
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  #section2 .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #section2 .col {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+  
+
+@media screen and (max-width: 767px) {
+  #sick-person {
+    display: none;
+  }
+
+  .text-content {
+    max-width: 100%;
+  }
+
+  #section2 .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #section2 .col {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

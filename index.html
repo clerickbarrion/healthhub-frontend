@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthHub</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/home.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-wrapper blue darken-4" >
+          <a href="index.html" class="brand-logo">HealthHub+</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="html/symptoms.html">Symptom Checker</a></li>
+            <li><a href="html/remedies.html">Remedies</a></li>
+            <li><a href="html/mentalHealth.html">Mental Health</a></li>
+            <li><a href="html/doctor.html">Find a Doctor</a></li>
+            <li><a href="html/logIn.html"  class="waves-effect waves-light btn">Log In</a></li>
+          </ul>
+          <img id="chat-icon" class="right" src="imgs/chaticon.png">
+        </div>
+    </nav>
+    
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="html/symptoms.html">Symptom Checker</a></li>
+        <li><a href="html/remedies.html">Remedies</a></li>
+        <li><a href="html/mentalHealth.html">Mental Health</a></li>
+        <li><a href="html/doctor.html">Find a Doctor</a></li>
+        <li><a href="html/logIn.html" class="waves-effect waves-light btn">Log In</a></li>
+    </ul>
+
+<main>
+
+  
+  <section id="section1">
+    <div class="content">
+      <div class="text-content">
+        <h3>I feel ...</h3>
+        <div id="typewriter"></div>
+        <div class="nav-wrapper blue darken-4">
+          <p id="welcome">Welcome to HealthHub+, your trusted healthcare companion! Our mission is simple: providing you with easy access to health information and solutions that make a difference. At HealthHub, we offer a diverse range of diagnoses and recommendations for at-home remedies and over-the-counter solutions. Think of us as your go-to buddy, here to empower you with the resources you need to tackle health concerns with ease and a smile!</p>
+          </div>  
+        </div>
+      </div>
+
+
+  
+      <div id="sick-person">
+        <img class="responsive-img" src="home-images/sick.jpg">
+      </div>
+    </div>
+  </section>
+
+  <section id="section2">
+    <div id="home-nav">
+        <h3 id="explore">Explore HealthHub+</h3>
+    </div>
+    
+    <div class="row">
+        <div class="col s12 m4">
+            <div class="card blue darken-4">
+              
+                <a href="html/symptoms.html" class="card-title white-text">Symptom Checker</a>
+            <div class="card-action">
+
+            </div>
+                <div class="card-content white-text" class=" infoCards">
+                    <p>Input your symptoms and find a diagnosis.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m4">
+            <div class="card blue darken-4">
+             
+                <a href="html/remedies.html" class="card-title white-text">Remedies</a>
+                 <div class="card-action">
+            </div>
+                <div class="card-content white-text">
+                    <p>Input your diagnosis to explore treatment options.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m4">
+            <div class="card blue darken-4">
+              
+                <a href="html/mentalHealth.html" class="card-title white-text">Mental Health</a>
+                <div class="card-action">
+              </div>
+                <div class="card-content white-text">
+                    <p>Find mental health resources.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card blue darken-4">
+              
+                <a href="html/doctor.html" class="card-title white-text">Find a Doctor</a>
+                <div class="card-action">
+            </div>
+                <div class="card-content white-text">
+                    <p>Find a doctor near you.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6">
+            <div class="card blue darken-4">
+              
+                <a href="html/doctor.html" class="card-title white-text">Login/Create Account</a>
+               <div class="card-action"> 
+            </div>
+                <div class="card-content white-text">
+                    <p>Log in or create a new account.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+
+  <section id="section3">
+    <h3 id="testimonials">Testimonials</h3>
+
+    <div class="carousel">
+      <a class="carousel-item" href="#item1" id="carousel1">
+          <img src="home-images/beyonce.png">
+      </a>
+  
+      <a class="carousel-item" href="#item2">
+          <img src="home-images/jcole.png" id=carousel2>
+      </a>
+  
+      <a class="carousel-item" href="#item3">
+          <img src="home-images/usain.png" id="carousel3">
+      </a>
+  </div>
+
+
+  </section>
+
+</main>
+    
+
+    <footer class="page-footer card-panel blue darken-4">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Contact</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Info@HealthHub.org</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Charlotte, NC</a></li>
+              <h5 class="white-text">Disclaimer</h5>
+              <p class="grey-text text-lighten-4">The information provided is intended for general informational purposes only and should not be considered professional medical advice, diagnosis, or treatment. 
+                HealthHub+ is not a licensed medical professional. Please consult a qualified healthcare professional for advice regarding your specific health condition. 
+                In case of a medical emergency, please call 911 or your local emergency services immediately.</p>
+                
+            </div>
+            <div class="col l4 offset-l2 s12">
+             
+    <div class="info_form ">
+          <h5>
+            Newsletter
+          </h5>
+          <form action="#">
+            <input type="email" placeholder="Enter your email">
+            <button class="waves-effect waves-light btn">
+              Subscribe
+            </button>
+          </form>
+        </div>
+                <h5 class="white-text">Resources</h5>
+                <li><a class="grey-text text-lighten-3" href="https://www.mayoclinic.org/">Mayo Clinic</a></li>
+                <li><a class="grey-text text-lighten-3" href="https://www.cdc.gov/index.htm">CDC Official Website</a></li>
+                <li><a class="grey-text text-lighten-3" href="https://988lifeline.org/">Suicide Prevention Hotline</a></li>
+           
+              </ul>
+            </div>
+
+           
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container center-align">
+          © 2024 HealthHub Copyright
+          
+          </div>
+        </div>
+      </footer>
+    <div id="chat-box"></div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/client-chat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+.brand-logo{
+  margin-left:3%;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+  min-height: 75vh;
+}
+    
+footer.page-footer card-panel blue darken-4 {
+margin: 0;
+}
+html, body {
+  height: 100%;
+}
+
+#chat-box {
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  width: 23%;
+  left: 76%;
+  border:  solid black;
+  box-shadow: rgb(51, 51, 51) 3px 0px 11px, rgb(51, 51, 51) -5px 0px 15px;
+
+}
+#chat-box button {
+  width: 100%;
+  font-size: 2rem;
+  margin: auto;
+  background-color: #26a69a ;
+  color: white;
+  cursor: pointer;
+  
+}
+#chat-box #chat-container {
+  display: none;
+}
+#chat-box #chat-container #messages {
+  max-height: 50vh;
+  overflow: scroll;
+}
+#chat-box #chat-container form {
+  display: flex;
+}
+#chat-box #chat-container form textarea {
+  width: 100%;
+}
+
+.ping {
+  font-size: 2rem;
+  background-color: green;
+  color: white;
+  margin:auto;
+  position: fixed;
+  border-radius: 10px;
+  padding: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: flyin 1s forwards
+}
+
+@keyframes flyin {
+  from {top: -1rem}
+  to {top: 1rem}
+}
+
+@keyframes openchat {
+  from {top: 100%}
+  to {top: 8%}
+}
+@keyframes closechat {
+  from {top: 8%}
+  to {top: 100%}
+}
+
+@media (min-width: 801px){
+  #chat-icon {
+    display:none;
+  }
+  #chat-box {
+    animation:none !important;
+  }
+}
+@media (max-width: 800px){
+  #chat-box {
+    display:block;
+    width: 100%;
+    left:0;
+    top:100%;
+    height: fit-content;
+    z-index: 2;
+  }
+  #chat-box button {
+    display:none;
+  }
+  #chat-box #chat-container {
+    display:block;
+  }
+  #chat-box #chat-container #messages{
+    height: 86vh;
+    max-height: 86vh;
+  }
+  #chat-icon{
+    display: block;
+    height: 100%;
+    cursor: pointer;
+  }
+}

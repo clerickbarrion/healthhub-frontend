@@ -1,0 +1,6 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #fafafa, #bbdefb, #fafafa);
+  }

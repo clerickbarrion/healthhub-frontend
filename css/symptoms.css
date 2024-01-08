@@ -1,0 +1,93 @@
+#symptomForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+#symptomForm label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#selectedSymptoms,
+#Diagnoses {
+    list-style: none;
+    padding: 0;
+    margin: 10px;
+}
+
+#symptomForm input,
+#symptomForm select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+#gender {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #9e9e9e;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.card .card-image .card-title {
+    background-color: #2a2828;
+    padding: 12px !important;
+
+}
+
+.card {
+    max-width: 100%;
+    height: 400px;
+}
+
+.cardPic {
+    height: 25vh;
+
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #fafafa, #bbdefb, #fafafa);
+  }
+
+  @media (max-width: 767px) {
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .col.s4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+        padding: 0 15px;
+    }
+
+    .card-content p {
+        font-size: 20px;
+    }
+
+    .card {
+        height: auto;
+    }
+}

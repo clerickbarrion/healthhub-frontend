@@ -1,0 +1,102 @@
+#best-health {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    color: black;
+}
+
+
+#tips,#remedies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    width: 70%;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(219, 224, 228, 0.935);
+    padding-bottom: 40px;
+    background-color: white;
+}
+#tips{
+    width: 60vw;
+    margin-left:-20%;
+}
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+#carousel1,
+#carousel2,
+#carousel3 {
+    width: 600px;
+    height: auto;
+}
+#form{
+    display: flex;
+    align-content: center;
+    margin-top: 3%;
+    
+   
+   
+}
+@media only screen and (min-width: 601px){
+    div.row .col.s25.m6  {
+         width: 45vw ;}}
+
+#diagnosis{
+    width:40%
+}
+
+#popup {
+    display:none;
+    flex-direction: column;
+    box-shadow: rgb(51, 51, 51) 5px 0px 15px, rgb(51, 51, 51) -5px 0px 15px;
+}
+
+.tabs{
+    display:flex;
+    flex-wrap: wrap;
+}
+.tabs > * {
+    width: 33.33%;
+}
+.tabs .indicator {
+    background-color: pink !important;
+}
+.tabs .active {
+    opacity: 0.8;
+}
+.card-image img {
+    max-height: 50vh;
+}
+.card-content p {
+    max-height: 50vh;
+    overflow: scroll;
+    font-size: 1rem;
+    text-align: left;
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #fafafa, #bbdefb, #fafafa);
+}
+
+@media only screen and (max-width: 773px) {
+    #tips {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #form.remedies {
+        width: 100%; 
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
