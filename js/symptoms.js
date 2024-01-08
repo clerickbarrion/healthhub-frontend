@@ -97,7 +97,7 @@ function removeSymptom(symptomId) {
 
 
 async function getSymptomIdByName() {
-    const token = await fetch(`${window.location.origin}/apimedic/getToken`).then(res => res.json()).then(token => token)
+    const token = await fetch(`https://healthhub-server.glitch.me/apimedic/getToken`).then(res => res.json()).then(token => token)
     const url = 'https://healthservice.priaid.ch/symptoms?token=' + token + '&format=json&language=en-gb';
     return fetch(url).then(res => res.json()).then(symptoms => symptoms);
 }
