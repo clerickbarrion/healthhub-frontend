@@ -138,7 +138,7 @@ function updateDiagnosesList(diagnoses) {
 
 async function getDiagnoses() {
     if (selectedSymptoms.length > 0) {
-        const token = await fetch(`${window.location.origin}/apimedic/getToken`).then(res => res.json()).then(token => token);
+        const token = await fetch(`https://healthhub-server.glitch.me/apimedic/getToken`).then(res => res.json()).then(token => token);
         const diagnosisUrl = 'https://healthservice.priaid.ch/diagnosis?symptoms=[' + selectedSymptoms.join(',') + ']&gender=' + gender + '&year_of_birth=' + birthYear + '&token=' + token + '&format=json&language=en-gb';
 
         fetch(diagnosisUrl)
