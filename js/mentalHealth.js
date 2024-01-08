@@ -1,198 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mental Health</title>
-  <link href="../css/style.css" rel="stylesheet">
-  <link href="../css/mentalHealth.css" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="../imgs/notes-medical-solid.svg">
-  <!-- copy from here -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.modal');
+  var instances = M.Modal.init(elems, options);
+});
 
 
-  <!-- to here -->
+const feelingInputElem= document.getElementById('feeling')
+const adviceHeader = document.getElementById('resourceHeading')
+const adviceOutput1 = document.getElementById('resourceList1')
+const adviceOutput2 = document.getElementById('resourceList2')
+const adviceOutput3 = document.getElementById('resourceList3')
+const agreeButton = document.getElementById('agree')
 
 
+agreeButton.addEventListener('click', async () => {
+  const list = await resourceDisplay();
+  console.log(list);
+  let feelingFound = false; // keep track if a match is found
+  for (let i = 0; i < list.length; i++) {
+    if (feelingInputElem.value.toUpperCase() === list[i].feeling.toUpperCase()) {
+      adviceHeader.innerText = 'Here are tips based on how you\'re feeling:';
+      adviceOutput1.innerText = list[i].advice1;
+      adviceOutput2.innerText = list[i].advice2;
+      adviceOutput3.innerText = list[i].advice3;
+      feelingFound = true; // true when a match is found
+      break; // exit the loop since we found a match
+    }
+  }
+  if (!feelingFound) { // if no match is found
+    adviceHeader.innerText = 'Please select another feeling';
+    adviceOutput1.innerText = "";
+    adviceOutput2.innerText = "";
+    adviceOutput3.innerText = "";
+  }
+});
+
+async function resourceDisplay() {
+  return fetch(`${window.location.origin}/feeling`)
+    .then(res => res.json())
+    .then(list => {
+      return list
+    });
+}
 
 
-</head>
+let i = 0;
+let placeholder = "";
+const words = ["Depressed...", "Overwhelmed...", "Anxious...", "Frustrated...", "Manic...", "Alone...", "Guilty..."];
 
-<body>
-<header>
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
 
-  <nav>
-    <div class="nav-wrapper blue darken-4" >
-      <a href="../index.html" class="brand-logo">HealthHub+</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="symptoms.html">Symptom Checker</a></li>
-        <li><a href="remedies.html">Remedies</a></li>
-        <li><a href="mentalHealth.html">Mental Health</a></li>
-        <li><a href="doctor.html">Find a Doctor</a></li>
-        <li><a href="logIn.html"  class="waves-effect waves-light btn">Log In</a></li>
-      </ul>
-      <img id="chat-icon" class="right" src="../imgs/chaticon.png">
-    </div>
-  </nav>
+function type() {
+  const word = words[wordIndex];
+  const speed = isDeleting ? 120 : 200;
 
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="symptoms.html">Symptom Checker</a></li>
-    <li><a href="remedies.html">Remedies</a></li>
-    <li><a href="mentalHealth.html">Mental Health</a></li>
-    <li><a href="doctor.html">Find a Doctor</a></li>
-    <li><a href="logIn.html" class="waves-effect waves-light btn">Log In</a></li>
-  </ul>
+  if (!isDeleting && charIndex < word.length) {
+    placeholder += word.charAt(charIndex);
+    charIndex++;
+  } else if (isDeleting && charIndex > 0) {
+    placeholder = placeholder.slice(0, -1);
+    charIndex--;
+  } else {
+    isDeleting = !isDeleting;
 
-  </header>
-<main class="center-align">
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Disclaimer</h4>
-      <p>
-        HealthHub+ is a resource designed for individuals seeking assistance with mental health, crisis support, locating a warmline, and navigating healthcare systems to collaborate with providers. However, it is crucial to recognize that the information provided here is for general informational purposes only and should not be considered a substitute for professional medical advice, diagnosis, or treatment. Always consult with your physician or qualified mental health professionals for specific concerns, and in case of a medical or psychiatric emergency, please call your local emergency number or seek immediate medical attention. HealthHub+ does not endorse specific healthcare providers, treatments, or procedures, and users should use the platform at their own risk, acknowledging our right to update, modify, or remove content without prior notice. By utilizing HealthHub+, users agree to these terms, and if they disagree, we advise refraining from using the platform</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="agree">Agree</a>
-    </div>
-  </div>
-<div id='form'>
-<div class="row center-align">
-  <div class="col s25 m6 ">
-    <div class="card">
-      <div class="card-content white-text">
-        <span class="card-title"> <h4 class="center-align black-text">How are you feeling?</h4></span>
+    if (isDeleting) {
+      wordIndex = (wordIndex + 1) % words.length;
+    }
+  }
 
-        <div class="container black-text">
-          <input type="text" id="feeling">
-      </div>
-         
-        
-      </div>
-      <div class="card-action"> 
-        <button class="center-align waves-light btn modal-trigger blue darken-4" href="#modal1">Get Positivity</button>
-      
-   
+  document.getElementById("feeling").setAttribute("placeholder", placeholder);
 
+  setTimeout(type, speed);
+}
+
+type();
 
 
 
-        <h5 id="resourceHeading" class="blue darken-4 white-text">HealthHub+ offers tips based on how you're feeling</h5>
-        <p id="resourceList1"></p>
-        <p id="resourceList2"></p>
-        <p id="resourceList3"></p>
-          
-      </div>
-       </div> 
-       </div>     
-  </div>
- </div>
-        <div class="row">
-            <div class="col s4">
-                
-              <div class="card" class="card-size">
-                <div class="card-image">
-                  <img class="cardPic" src="../imgs/nature.webp">
-                  <span class="card-title">Crisis Resources</span>
-                  <a class="btn-floating halfway-fab waves-effect waves-light blue darken-4" link href="https://988lifeline.org/?utm_source=google&utm_medium=web&utm_campaign=onebox"><i class="material-icons">local_hospital</i></a>
-                </div>
-                <div class="card-content">
-                  <p>If you or someone you know is struggling or in crisis, help is available. Call or text 988 or chat 988lifeline.org. You can also reach Crisis Text Line by texting MHA to 741741.</p>
-                </div>
-              </div>
-            </div>
-            
-            <div class="col s4">
-                
-                <div class="card" class="card-size">
-                  <div class="card-image">
-                    <img class="cardPic" src="../imgs/wellnessImg.jpeg">
-                    <span class="card-title">Warmlines</span>
-                    <a class="btn-floating halfway-fab waves-effect waves-light blue darken-4" link href="https://warmline.org/warmdir.html#directory"><i class="material-icons">call</i></a>
-                  </div>
-                  <div class="card-content">
-                    <p>If you just need someone to talk to, consider calling a warmline. Warmlines are staffed by trained peers who understand what it’s like to need mental health support. </p>
-                  </div>
-                </div>
-              </div> <div class="col s4">
-                
-                <div class="card" class="card-size">
-                  <div class="card-image">
-                    <img class="cardPic" src="../imgs/path.jpeg">
-                    <span class="card-title">Take A Mental Health Test</span>
-                    <a class="btn-floating halfway-fab waves-effect waves-light blue darken-4" link href="https://screening.mhanational.org/screening-tools/"><i class="material-icons">mode_edit</i></a>
-                  </div>
-                  <div class="card-content">
-                    <p>Online screening is one of the quickest and easiest ways to determine whether you are experiencing symptoms of a mental health condition. Take a test now.</p>
-                  </div>
-                </div>
-              </div>
-        </div>
-                  
-        
-</main>
-
-  <footer class="page-footer card-panel blue darken-4">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Contact</h5>
-          <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Info@HealthHub.org</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Charlotte, NC</a></li>
-            <h5 class="white-text">Disclaimer</h5>
-            <p class="grey-text text-lighten-4">The information provided is intended for general informational purposes
-              only and should not be considered professional medical advice, diagnosis, or treatment.
-              HealthHub+ is not a licensed medical professional. Please consult a qualified healthcare professional for
-              advice regarding your specific health condition.
-              In case of a medical emergency, please call 911 or your local emergency services immediately.</p>
-
-        </div>
-        <div class="col l4 offset-l2 s12">
-
-          <div class="info_form ">
-            <h5>
-              Newsletter
-            </h5>
-            <form action="#">
-              <input type="email" placeholder="Enter your email">
-              <button class="waves-effect waves-light btn">
-                Subscribe
-              </button>
-            </form>
-          </div>
-          <h5 class="white-text">Resources</h5>
-          <li><a class="grey-text text-lighten-3" href="https://www.mayoclinic.org/">Mayo Clinic</a></li>
-          <li><a class="grey-text text-lighten-3" href="https://www.cdc.gov/index.htm">CDC Official Website</a></li>
-          <li><a class="grey-text text-lighten-3" href="https://988lifeline.org/">Suicide Prevention Hotline</a></li>
-
-          </ul>
-        </div>
-
-
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container center-align">
-        © 2024 HealthHub Copyright
-
-      </div>
-    </div>
-  </footer>
-  <script type="text/javascript" src="../js/doctor.js"></script>
-  <!-- copy from here -->
-  <div id="chat-box"></div>
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="../js/client-chat.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script type="text" src="../css/materialize-css/dist/js/materialize.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="../js/mentalHealth.js"></script>
-  <!-- to here -->
-</body>
-
-</html>
