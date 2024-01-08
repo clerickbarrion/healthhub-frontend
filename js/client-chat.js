@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         })
     }
     M.Sidenav.init(document.querySelectorAll('.sidenav'));
-    const socket = io()
+    const socket = io('https://healthhub-server.glitch.me')
     const chatBox = document.getElementById('chat-box')
     chatBox.innerHTML = `
         <button>Chat</button>
