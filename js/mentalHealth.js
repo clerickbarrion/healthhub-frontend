@@ -36,7 +36,7 @@ agreeButton.addEventListener('click', async () => {
 });
 
 async function resourceDisplay() {
-  return fetch(`${window.location.origin}/feeling`)
+  return fetch(`https://healthhub-server.glitch.me/feeling`)
     .then(res => res.json())
     .then(list => {
       return list
